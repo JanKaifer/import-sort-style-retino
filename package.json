@@ -1,7 +1,7 @@
 {
-  "name": "import-sort-style-wes",
-  "version": "3.0.0",
-  "description": "Wes' personal import-sort style",
+  "name": "import-sort-style-retino",
+  "version": "7.0.0",
+  "description": "Retino import-sort style",
   "keywords": [
     "grouped",
     "import order",
@@ -9,10 +9,11 @@
     "import-sort",
     "import",
     "order",
-    "sort"
+    "sort",
+    "retio"
   ],
-  "repository": "WesSouza/import-sort-style-wes",
-  "author": "Wes Souza <hey@wes.dev> (https://wes.dev/)",
+  "repository": "JanKaifer/import-sort-style-retino",
+  "author": "Jan Kaifer <jan@kaifer.cz>",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -61,5 +62,8 @@
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
   }
 }

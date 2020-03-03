@@ -1,45 +1,32 @@
-# import-sort-style-wes
+# import-sort-style-retino
 
-Wes' personal style for [import-sort](https://github.com/renke/import-sort).
+Retino style for [import-sort](https://github.com/renke/import-sort).
+
+## Credits
+
+This style is just a fork of import-sort-style-wes.
 
 ## Sorting Example
 
 ```js
-// Modules without members
-import '@scoped/module';
-import 'first-module';
-import 'second-module';
-import '~/local-module';
+// Modules that start with 'react'
+import React from 'react';
+import ReactDom from 'react-dom';
+// Other Modules
+import _, {...} from 'first-module';
+import _, {...} from 'second-module';
 
-// Installed and scoped modules
-import scoped from '@scoped/thing';
-import whatever from 'module-a';
-import anything from 'module-b';
-
-// Local resolved modules
-import exported from '~/project-root-file';
+// Modules inclued in RETINO_OUR_MODULES_NAMES in .env
+import localModule from 'localModule';
 
 // Siblings and parents
 import things from '../grand-parent';
 import name from '../parent';
 import sibling from './sibling';
+
+// Imports without members
+import "style.css"
 ```
-
-## Why `~`?
-
-Not all characters can be used at a module path, because of `npm` registry
-rules, and file system constraints. `npm` already uses the `@` prefix to scope
-organizations and teams.
-
-Inspired by [Parcel](https://parceljs.org), which resolves `~` to the project
-source directory by default, I decided to define `~` as the de facto reference
-for all of my packages root source directories.
-
-Some projects prefer to have every folder on the project source as its own
-resolve alias. I find this bad especially for use cases like this, where one
-would need to read the file system to determine if an import is within
-`node_modules` or the project's source folder. Given that these can be
-configured in a multitude of ways, I decided to not support that at all.
 
 ## Usage
 
@@ -50,8 +37,8 @@ method of enforcing import sort order.
 # Install prettier-plugin-import-sort
 yarn add -D prettier-plugin-import-sort
 
-# Install import-sort-style-wes
-yarn add -D import-sort-style-wes
+# Install import-sort-style-retino
+yarn add -D import-sort-style-retino
 ```
 
 Then add on your root `package.json`:
@@ -61,15 +48,21 @@ Then add on your root `package.json`:
   "importSort": {
     ".js, .jsx": {
       "parser": "babylon",
-      "style": "wes"
+      "style": "retino"
     },
     ".ts, .tsx": {
       "parser": "typescript",
-      "style": "wes"
+      "style": "retino"
     }
   }
 }
 ```
+
+## Config
+
+Use `.env` file. Used variables:
+
+`RETINO_OUR_MODULES_NAMES` selects which modules should be threated as a local modules (and appear in the second group)
 
 ## Development
 
