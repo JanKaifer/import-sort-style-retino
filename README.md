@@ -60,7 +60,7 @@ Then add on your root `package.json`:
 
 ## Config
 
-Use `.env` file. Used variables:
+Use `.import-sort-style-retino-config` file. Used variables:
 
 `RETINO_OUR_MODULES_NAMES` selects which modules should be threated as a local modules (and appear in the second group)
 
