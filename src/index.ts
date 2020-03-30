@@ -1,11 +1,14 @@
 import { IStyleAPI, IStyleItem } from 'import-sort-style';
 import Dotenv from 'dotenv';
+import path from 'path';
 
 const OUR_MODULES_NAMES = 'RETINO_OUR_MODULES_NAMES';
 
 const ourModules: string[] = [];
 
-const result = Dotenv.config();
+const result = Dotenv.config({
+  path: path.resolve(process.cwd(), '.import-sort-style-retino-config'),
+});
 if (result.parsed) {
   const config = result.parsed;
 
