@@ -7,7 +7,7 @@ const OUR_MODULES_NAMES = 'RETINO_OUR_MODULES_NAMES';
 const ourModules: string[] = [];
 
 const result = Dotenv.config({
-  path: path.resolve(process.cwd(), '.import-sort-style-retino-config'),
+  path: path.resolve(process.cwd(), 'src/.import-sort-style-retino-config'),
 });
 if (result.parsed) {
   const config = result.parsed;
